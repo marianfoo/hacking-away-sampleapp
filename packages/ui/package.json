@@ -21,9 +21,6 @@
     "lint:staged": "lint-staged",
     "wdi5": "cd test && wdio run wdio.conf.ts"
   },
-  "dependencies": {
-    "@local/library": "^1.0.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.19.1",
@@ -56,7 +53,6 @@
   },
   "ui5": {
     "dependencies": [
-      "@local/library",
       "ui5-middleware-livereload",
       "ui5-middleware-simpleproxy",
       "ui5-tooling-modules",
