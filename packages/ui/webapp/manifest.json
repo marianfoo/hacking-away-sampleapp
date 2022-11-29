@@ -1,0 +1,106 @@
+{
+  "_version": "1.12.0",
+
+  "sap.app": {
+    "id": "hacking.away.sampleapp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{app_title}}",
+    "description": "{{app_description}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "todos": {
+        "type": "OData",
+        "uri": "/v2/catalog"
+      }
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {},
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "hacking.away.sampleapp.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+
+    "dependencies": {
+      "minUI5Version": "1.97.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {},
+        "sap.m": {},
+        "hacking.away.samplelib": {}
+      }
+    },
+
+    "handleValidation": true,
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "hacking.away.sampleapp.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "todos",
+        "type": "hacking.away.sampleapp.models.TodoModel"
+      },
+      "ui": {
+        "type": "hacking.away.sampleapp.models.UIModel"
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "hacking.away.sampleapp.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "main",
+          "target": "main"
+        }
+      ],
+      "targets": {
+        "main": {
+          "viewId": "main",
+          "viewName": "Main"
+        }
+      }
+    }
+  }
+}

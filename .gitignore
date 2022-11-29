@@ -9,7 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # build results
-webapp
+
 dist
 src-gen
 test-gen
